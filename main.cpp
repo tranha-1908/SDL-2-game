@@ -5,6 +5,7 @@
 
 class InitError : public std::exception
 {
+    dfdf
     std::string msg;
 public:
     InitError();
