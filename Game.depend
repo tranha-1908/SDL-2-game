@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1741682699 source:c:\users\admin\downloads\untitled1.cpp
+	<iostream>
+	<vector>
+
+1741949649 source:d:\code\sdl-2-game\main.cpp
+	<exception>
+	<string>
+	<iostream>
+	<SDL.h>
+
