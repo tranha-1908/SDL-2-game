@@ -45,8 +45,14 @@
 		<ExtraCommands>
 			<Add after="XCOPY $(#sdl2)\bin\*.dll $(TARGET_OUTPUT_DIR) /D /Y" />
 		</ExtraCommands>
-		<Unit filename="C:/Users/Admin/Downloads/Untitled1.cpp" />
+		<Unit filename="BASE_OBJECT.cpp" />
+		<Unit filename="BASE_OBJECT.h" />
+		<Unit filename="Bird.h" />
+		<Unit filename="COMMON_FUNC.cpp" />
+		<Unit filename="COMMON_FUNC.h" />
+		<Unit filename="impact.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="map.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

@@ -3,9 +3,53 @@
 	<iostream>
 	<vector>
 
-1741949649 source:d:\code\sdl-2-game\main.cpp
-	<exception>
-	<string>
-	<iostream>
+1742486739 source:d:\code\sdl-2-game\main.cpp
+	"COMMON_FUNC.h"
+	"BASE_OBJECT.h"
+	"game_map.h"
+
+1742020997 source:d:\code\sdl-2-game\bird.cpp
 	<SDL.h>
+	<SDL_image.h>
+	<iostream>
+	<vector>
+	<cmath>
+
+1742048472 source:d:\code\sdl-2-game\map.cpp
+	<SDL_image.h>
+	<iostream>
+
+1742403394 d:\code\sdl-2-game\map.h
+	<vector>
+
+1742403626 d:\code\sdl-2-game\bird.h
+	<cmath>
+
+1742443462 source:d:\code\sdl-2-game\common_func.cpp
+	"COMMON_FUNC.h"
+
+1742487432 d:\code\sdl-2-game\common_func.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<string.h>
+	<cmath>
+	<vector>
+	<iostream>
+	<stdio.h>
+
+1742441667 d:\code\sdl-2-game\base_object.h
+	"COMMON_FUNC.h"
+
+1742485775 source:d:\code\sdl-2-game\base_object.cpp
+	"BASE_OBJECT.h"
+
+1742486615 source:d:\code\sdl-2-game\game_map.cpp
+	<stdio.h>
+	"game_map.h"
+
+1742485775 d:\code\sdl-2-game\game_map.h
+	"COMMON_FUNC.h"
+	"BASE_OBJECT.h"
 
