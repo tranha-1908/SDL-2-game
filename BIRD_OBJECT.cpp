@@ -21,7 +21,7 @@ void BirdObject::HandleMove(const int& x_border, const int& y_border, Map& map_d
     float x = start_x + get_x_veloc()* time;
     float y = start_y + get_y_veloc()*time +0.5*Gravity*time*time;
     SetRect(x,y);
-    if(rect_.x > x_border|| rect_.y>y_border)
+    if(rect_.x > x_border|| rect_.y>y_border-92)
         {
             set_is_move(false);
         }
@@ -31,12 +31,15 @@ void BirdObject::HandleMove(const int& x_border, const int& y_border, Map& map_d
 }
 void BirdObject::CheckToMap(Map& map_data)
 {
-    int y = (rect_.x-338-1)/TILE_SIZE;
-    int x = (rect_.y-1)/TILE_SIZE;
+    int x = (rect_.x-338)/TILE_SIZE;
+    int y = (rect_.y)/TILE_SIZE;
     std::cout << x << " & " << y << '\n';
-    if(x>=0 && x< MAX_MAP_x && y>=0 && y< MAX_MAP_y)
+    if(x>= MAX_MAP_x || y<=0 || y>= MAX_MAP_y)
     {
-        if(map_data.tile[x][y] != 0)
+        set_is_move(false);
+    }
+    else {
+        if(map_data.tile[y][x] != 0)
         {
             set_is_move(false);
         }
