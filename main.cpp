@@ -4,7 +4,6 @@
 #include "BIRD_OBJECT.h"
 #include"main_object.h"
 BaseObject g_background;
-
 bool InitData()
 {
     bool success = true;
@@ -67,23 +66,61 @@ int main(int argc, char *argv[])
 
     MainObject p_player;
     p_player.LoadImg("image/113160.png",g_screen);
+
     bool is_quit = false;
+    int angle_= 40;
+    int velocity_ = 30;
     while(!is_quit)
     {
-        while(SDL_PollEvent(&g_event)!=0)
+
+        while(SDL_PollEvent(&g_event))
         {
+
             if(g_event.type== SDL_QUIT)
             {
                 is_quit=true;
             }
-            p_player.HandleInput(g_event,g_screen);
+            if (g_event.type == SDL_KEYDOWN ) {
+                switch (g_event.key.keysym.sym) {
+
+                    case SDLK_RIGHT:
+                        {angle_-=5;
+                        break;}
+                    case SDLK_LEFT:
+                        {angle_+=5;
+                        break;}
+                    case SDLK_UP:
+                        {velocity_+=5;
+                        break;}
+                    case SDLK_DOWN:
+                        {velocity_-=5;
+                        break;}
+                    default:
+                        break;
+                }
+                std::cout << angle_ << " & " <<velocity_ << std::endl;
+            }
+            if(g_event.type == SDL_MOUSEBUTTONDOWN){
+
+                if(g_event.button.button==SDL_BUTTON_LEFT){
+
+                    BirdObject* p_bird = new BirdObject;
+                    p_bird->set_angle(angle_);
+                    p_bird->set_velocity(velocity_);
+                    p_bird->LoadImg("image/red.png", g_screen);
+                    p_player.p_bird_list.push_back(p_bird);
+                }
+            }
         }
+
         SDL_RenderClear(g_screen);
 
         g_background.Render(g_screen,NULL);
 
         game_map.DrawMap(g_screen);
         p_player.Render(g_screen,NULL);
+        Map map_data = game_map.get_map();
+        p_player.HandleBird(g_screen,map_data);
 
         SDL_RenderPresent(g_screen);
     }

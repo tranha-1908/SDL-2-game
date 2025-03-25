@@ -4,47 +4,36 @@
 BirdObject::BirdObject(){
     rect_.x = start_x;
     rect_.y = start_y;
-    is_move=false;
+    is_move=true;
+    time = 0;
     type_bird = 1;
+    angle = 0;
+    velocity =100;
 }
 BirdObject::~BirdObject()
 {
 
 }
 
-
-
-
-
-void BirdObject:: HandleBird(SDL_Renderer* des)
+void BirdObject::HandleMove(const int& x_border, const int& y_border, Map& map_data)
 {
-    for(int i = 0;i<p_bird_list.size();i++)
-    {
-        BirdObject* p_bird = p_bird_list.at(i);
-        if(p_bird != NULL)
-            {
-                if(p_bird->get_is_move()==true)
-                {
-                    p_bird->HandleMove(SCREEN_WIDTH,SCREEN_HEIGHT);
-                    p_bird->Render_bird(des);
-                }
-                else p_bird_list.erase(p_bird_list.begin()+i);
-                if(p_bird!=NULL)
-                {
-                    delete p_bird;
-                    p_bird = NULL;
-                }
-            }
-    }
-}
 
+    float x = start_x + get_x_veloc()* time;
+    float y = start_y + get_y_veloc()*time +0.5*Gravity*time*time;
+    SetRect(x,y);
+    if(rect_.x > x_border|| rect_.y>y_border)
+        {
+            set_is_move(false);
+        }
+    CheckToMap(map_data);
+    set_time(time + step_time);
+
+}
 void BirdObject::CheckToMap(Map& map_data)
 {
-    int x = 0;
-    int y = 0;
-
-    x = (rect_.x+rect_.w)/TILE_SIZE;
-    y = (rect_.y+rect_.h)/TILE_SIZE;
+    int y = (rect_.x-338-1)/TILE_SIZE;
+    int x = (rect_.y-1)/TILE_SIZE;
+    std::cout << x << " & " << y << '\n';
     if(x>=0 && x< MAX_MAP_x && y>=0 && y< MAX_MAP_y)
     {
         if(map_data.tile[x][y] != 0)
@@ -53,4 +42,3 @@ void BirdObject::CheckToMap(Map& map_data)
         }
     }
 }
-

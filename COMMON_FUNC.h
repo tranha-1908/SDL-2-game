@@ -9,7 +9,6 @@
 #include<cmath>
 #include<vector>
 #include<iostream>
-#include<stdio.h>
 #include<string>
 
 static SDL_Window* g_window = NULL;
@@ -35,5 +34,7 @@ struct Map
     int tile[MAX_MAP_y][MAX_MAP_x];
     char* filename;
 };
+
+
 
 #endif // COMMON_FUNC__
