@@ -1,5 +1,6 @@
 
 #include"BASE_OBJECT.h"
+
 BaseObject::BaseObject()
 {
     p_object_=NULL;
@@ -44,4 +45,3 @@ void BaseObject::free()
         rect_.w = 0;
     }
 }
-

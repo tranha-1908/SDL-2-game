@@ -1,7 +1,10 @@
 #include"COMMON_FUNC.h"
 #include"BASE_OBJECT.h"
 #include"game_map.h"
+#include "BIRD_OBJECT.h"
+#include"main_object.h"
 BaseObject g_background;
+
 bool InitData()
 {
     bool success = true;
@@ -59,9 +62,11 @@ int main(int argc, char *argv[])
     }
 
     GameMap game_map;
-    game_map.LoadMap("map/map01.txt");
+    game_map.LoadMap("map01.txt");
     game_map.LoadTiles(g_screen);
 
+    MainObject p_player;
+    p_player.LoadImg("image/113160.png",g_screen);
     bool is_quit = false;
     while(!is_quit)
     {
@@ -71,12 +76,15 @@ int main(int argc, char *argv[])
             {
                 is_quit=true;
             }
+            p_player.HandleInput(g_event,g_screen);
         }
         SDL_RenderClear(g_screen);
 
         g_background.Render(g_screen,NULL);
 
         game_map.DrawMap(g_screen);
+        p_player.Render(g_screen,NULL);
+
         SDL_RenderPresent(g_screen);
     }
     close();

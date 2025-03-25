@@ -50,8 +50,12 @@
 		<Unit filename="Bird.h" />
 		<Unit filename="COMMON_FUNC.cpp" />
 		<Unit filename="COMMON_FUNC.h" />
+		<Unit filename="game_map.cpp" />
+		<Unit filename="game_map.h" />
 		<Unit filename="impact.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="main_object.cpp" />
+		<Unit filename="main_object.h" />
 		<Unit filename="map.h" />
 		<Extensions />
 	</Project>

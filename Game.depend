@@ -3,10 +3,12 @@
 	<iostream>
 	<vector>
 
-1742486739 source:d:\code\sdl-2-game\main.cpp
+1742892377 source:d:\code\sdl-2-game\main.cpp
 	"COMMON_FUNC.h"
 	"BASE_OBJECT.h"
 	"game_map.h"
+	"BIRD_OBJECT.h"
+	"main_object.h"
 
 1742020997 source:d:\code\sdl-2-game\bird.cpp
 	<SDL.h>
@@ -28,7 +30,7 @@
 1742443462 source:d:\code\sdl-2-game\common_func.cpp
 	"COMMON_FUNC.h"
 
-1742487432 d:\code\sdl-2-game\common_func.h
+1742890056 d:\code\sdl-2-game\common_func.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
@@ -38,18 +40,34 @@
 	<vector>
 	<iostream>
 	<stdio.h>
+	<string>
 
-1742441667 d:\code\sdl-2-game\base_object.h
+1742892377 d:\code\sdl-2-game\base_object.h
 	"COMMON_FUNC.h"
 
-1742485775 source:d:\code\sdl-2-game\base_object.cpp
+1742887133 source:d:\code\sdl-2-game\base_object.cpp
 	"BASE_OBJECT.h"
 
-1742486615 source:d:\code\sdl-2-game\game_map.cpp
-	<stdio.h>
+1742724998 source:d:\code\sdl-2-game\game_map.cpp
+	<fstream>
 	"game_map.h"
 
-1742485775 d:\code\sdl-2-game\game_map.h
+1742723262 d:\code\sdl-2-game\game_map.h
 	"COMMON_FUNC.h"
 	"BASE_OBJECT.h"
+
+1742894878 d:\code\sdl-2-game\bird_object.h
+	"COMMON_FUNC.h"
+	"BASE_OBJECT.h"
+
+1742893329 source:d:\code\sdl-2-game\main_object.cpp
+	"main_object.h"
+
+1742892554 source:d:\code\sdl-2-game\bird_object.cpp
+	"BIRD_OBJECT.h"
+
+1742894873 d:\code\sdl-2-game\main_object.h
+	"COMMON_FUNC.h"
+	"BASE_OBJECT.h"
+	"BIRD_OBJECT.h"
 
