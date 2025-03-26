@@ -65,9 +65,9 @@ void GameMap::DrawMap(SDL_Renderer* screen)
             map_x = (j-338)/TILE_SIZE;
             int val = game_map_.tile[map_y][map_x];
             if (val > 0) {
+                    tile_mat[val].SetRect(j, i);
+                    tile_mat[val].Render(screen);
 
-                tile_mat[val].SetRect(j, i);
-                tile_mat[val].Render(screen);
             }
         }
     }

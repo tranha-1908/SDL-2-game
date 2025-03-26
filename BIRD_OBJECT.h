@@ -13,6 +13,9 @@ public:
     BirdObject();
     ~BirdObject();
 
+    bool destroy_pig;
+    bool destroy_block;
+
     void set_angle(const int& angle_){angle = angle_;}
     void set_velocity(const int& velocity_){ velocity = velocity_;}
     void set_time(const float& time_){time = time_;}
@@ -40,5 +43,6 @@ protected:
     int velocity;
     int angle ;
     float time;
+
 };
 #endif // MAIN_OBJECT_H

@@ -14,8 +14,7 @@
 static SDL_Window* g_window = NULL;
 static SDL_Renderer* g_screen = NULL;
 static SDL_Event g_event;
-
-
+static bool playing;
 // screen
 const int SCREEN_WIDTH = 1138;
 const int SCREEN_HEIGHT = 640;
@@ -33,8 +32,13 @@ struct Map
     int index_y;
     int tile[MAX_MAP_y][MAX_MAP_x];
     char* filename;
+
 };
 
+namespace SDLCommonFunc
+{
+    bool CheckCollision(const SDL_Rect& object1, const SDL_Rect& object2);
 
+}
 
 #endif // COMMON_FUNC__

@@ -21,8 +21,12 @@ public:
     {
         return p_bird_list;
     }
-    std::vector<BirdObject*> p_bird_list;
 
-private:
+    bool Result_game();
+    std::vector<BirdObject*> p_bird_list;
+    int score = 0;
+    int number_bird = 10;
+    int number_pig = 2;
+    bool Result;
 };
 #endif // MAIN_OBJECT_H

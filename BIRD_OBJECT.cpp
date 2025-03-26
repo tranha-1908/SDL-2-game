@@ -9,6 +9,8 @@ BirdObject::BirdObject(){
     type_bird = 1;
     angle = 0;
     velocity =100;
+    destroy_block= false;
+    destroy_pig = false;
 }
 BirdObject::~BirdObject()
 {
@@ -31,17 +33,29 @@ void BirdObject::HandleMove(const int& x_border, const int& y_border, Map& map_d
 }
 void BirdObject::CheckToMap(Map& map_data)
 {
-    int x = (rect_.x-338)/TILE_SIZE;
+    int x = (rect_.x+rect_.w-338)/TILE_SIZE;
     int y = (rect_.y)/TILE_SIZE;
-    std::cout << x << " & " << y << '\n';
-    if(x>= MAX_MAP_x || y<=0 || y>= MAX_MAP_y)
+
+    if(x> MAX_MAP_x || y<0 || y> MAX_MAP_y )
     {
         set_is_move(false);
     }
     else {
-        if(map_data.tile[y][x] != 0)
+        if(x>=0 && map_data.tile[y][x] != 0 )
         {
+
+
+            if(map_data.tile[y][x] == 4){
+                destroy_pig = true;
+
+            }
+            if(map_data.tile[y][x]>=1 || map_data.tile[y][x] <=3){
+                destroy_block = true;
+            }
+
+            map_data.tile[y][x] = 0 ;
             set_is_move(false);
         }
+
     }
 }

@@ -47,9 +47,13 @@
 		</ExtraCommands>
 		<Unit filename="BASE_OBJECT.cpp" />
 		<Unit filename="BASE_OBJECT.h" />
+		<Unit filename="BIRD_OBJECT.cpp" />
+		<Unit filename="BIRD_OBJECT.h" />
 		<Unit filename="Bird.h" />
 		<Unit filename="COMMON_FUNC.cpp" />
 		<Unit filename="COMMON_FUNC.h" />
+		<Unit filename="TextObject.cpp" />
+		<Unit filename="TextObject.h" />
 		<Unit filename="game_map.cpp" />
 		<Unit filename="game_map.h" />
 		<Unit filename="impact.h" />

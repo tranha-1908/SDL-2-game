@@ -3,7 +3,7 @@
 
  #include"COMMON_FUNC.h"
  #include"BASE_OBJECT.h"
- #define MAX_TILES 5
+ #define MAX_TILES 20
  class TileMat: public BaseObject
  {
  public:
@@ -22,7 +22,7 @@ public:
     void DrawMap(SDL_Renderer* screen);
 
     Map get_map() const { return game_map_; }
-private:
+//private:
     Map game_map_;
     TileMat tile_mat[MAX_TILES];
 
