@@ -11,14 +11,14 @@ public:
     SDL_Rect GetRect() const {return rect_;}
     SDL_Texture* GetObject() const{return p_object_;}
 
-    virtual bool LoadImg(const char* filename, SDL_Renderer* screen);
-    void Render(SDL_Renderer* des, const SDL_Rect* clip = NULL);
+    bool LoadImg(const char* filename, SDL_Renderer* screen);
+    void Render(SDL_Renderer* des);
     void free();
+
     void waitUntilKeyPress();
 
     void waitMouseButton();
 
-     Explored(SDL_Renderer* screen, SDL_Rect& object);
 protected:
     SDL_Texture* p_object_;
     SDL_Rect rect_;

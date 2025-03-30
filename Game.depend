@@ -3,13 +3,13 @@
 	<iostream>
 	<vector>
 
-1743024898 source:d:\code\sdl-2-game\main.cpp
+1743375024 source:d:\code\sdl-2-game\main.cpp
 	"COMMON_FUNC.h"
 	"BASE_OBJECT.h"
-	"game_map.h"
 	"BIRD_OBJECT.h"
-	"main_object.h"
-	"TextObject.h"
+	"GAME_MAP.h"
+	"MAIN_OBJECT.h"
+	"TEXT_OBJECT.h"
 
 1742020997 source:d:\code\sdl-2-game\bird.cpp
 	<SDL.h>
@@ -28,52 +28,54 @@
 1742403626 d:\code\sdl-2-game\bird.h
 	<cmath>
 
-1743012326 source:d:\code\sdl-2-game\common_func.cpp
+1743324880 source:d:\code\sdl-2-game\common_func.cpp
 	"COMMON_FUNC.h"
 
-1743018805 d:\code\sdl-2-game\common_func.h
+1743374194 d:\code\sdl-2-game\common_func.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
 	<SDL_ttf.h>
 	<string.h>
-	<cmath>
 	<vector>
 	<iostream>
 	<string>
 
-1743014476 d:\code\sdl-2-game\base_object.h
+1743371852 d:\code\sdl-2-game\base_object.h
 	"COMMON_FUNC.h"
 
-1743012326 source:d:\code\sdl-2-game\base_object.cpp
+1743371846 source:d:\code\sdl-2-game\base_object.cpp
 	"BASE_OBJECT.h"
 
-1743012326 source:d:\code\sdl-2-game\game_map.cpp
+1743368609 source:d:\code\sdl-2-game\game_map.cpp
 	<fstream>
 	"game_map.h"
 
-1742981378 d:\code\sdl-2-game\game_map.h
+1743360140 d:\code\sdl-2-game\game_map.h
 	"COMMON_FUNC.h"
 	"BASE_OBJECT.h"
 
-1743014530 d:\code\sdl-2-game\bird_object.h
+1743370440 d:\code\sdl-2-game\bird_object.h
 	"COMMON_FUNC.h"
 	"BASE_OBJECT.h"
 
-1743022604 source:d:\code\sdl-2-game\main_object.cpp
+1743373084 source:d:\code\sdl-2-game\main_object.cpp
 	"main_object.h"
 
-1743014306 source:d:\code\sdl-2-game\bird_object.cpp
+1743374805 source:d:\code\sdl-2-game\bird_object.cpp
 	"BIRD_OBJECT.h"
 
-1743024936 d:\code\sdl-2-game\main_object.h
+1743372763 d:\code\sdl-2-game\main_object.h
 	"COMMON_FUNC.h"
 	"BASE_OBJECT.h"
 	"BIRD_OBJECT.h"
 
-1743020683 source:d:\code\sdl-2-game\textobject.cpp
+1743207818 source:d:\code\sdl-2-game\textobject.cpp
 	"TextObject.h"
 
-1743020348 d:\code\sdl-2-game\textobject.h
+1743207812 d:\code\sdl-2-game\textobject.h
+	"COMMON_FUNC.h"
+
+1743207812 d:\code\sdl-2-game\text_object.h
 	"COMMON_FUNC.h"
 

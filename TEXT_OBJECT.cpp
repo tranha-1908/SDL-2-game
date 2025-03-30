@@ -27,8 +27,8 @@ void TextObject::Free()
         texture_ = NULL;
     }
 }
-void TextObject::SetColor(Uint8 red, Uint8 green, Uint8 blue)
-{
+void TextObject::SetColor(Uint8 alpha,Uint8 red, Uint8 green, Uint8 blue)
+{   text_color.a = alpha;
     text_color.r = red;
     text_color.g = green;
     text_color.b = blue;

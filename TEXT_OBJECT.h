@@ -12,7 +12,7 @@ public:
 
     bool LoadFromRenderText(TTF_Font* font, SDL_Renderer* screen);
     void Free();
-    void SetColor(Uint8 red, Uint8 green, Uint8 blue);
+    void SetColor(Uint8 alpha, Uint8 red, Uint8 green, Uint8 blue);
 
     void RenderText(SDL_Renderer* screen, int x,int y, double angle=0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
     int GetWidth() const {return width;}

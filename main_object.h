@@ -10,23 +10,16 @@ public:
     MainObject();
     ~MainObject();
 
-
     void HandleBird(SDL_Renderer* des, Map& map_data);
-    void set_bird_list(std::vector<BirdObject*> bird_list)
-    {
-        p_bird_list = bird_list;
-
-    }
-    std:: vector<BirdObject*> get_bird_list() const
-    {
-        return p_bird_list;
-    }
-
     bool Result_game();
+    void reset();
+    void DrawTrajectory(SDL_Renderer* renderer, int start_x, int start_y);
+    bool check_button(const int&x, const int& y);
     std::vector<BirdObject*> p_bird_list;
+
     int score = 0;
-    int number_bird = 10;
-    int number_pig = 2;
+    int number_bird = 20;
+    int number_pig = 7;
     bool Result;
 };
 #endif // MAIN_OBJECT_H

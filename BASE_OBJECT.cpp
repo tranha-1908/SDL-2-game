@@ -30,10 +30,10 @@ bool BaseObject::LoadImg(const char* filename, SDL_Renderer* screen)
         p_object_= new_texture;
         return p_object_ != NULL;
 }
-void BaseObject::Render(SDL_Renderer* des, const SDL_Rect* clip)
+void BaseObject::Render(SDL_Renderer* des)
 {
     SDL_Rect render_q = {rect_.x, rect_.y,rect_.w,rect_.h};
-    SDL_RenderCopy(des, p_object_,clip,&render_q);
+    SDL_RenderCopy(des, p_object_,NULL,&render_q);
 }
 void BaseObject::free()
 {
@@ -45,40 +45,22 @@ void BaseObject::free()
         rect_.w = 0;
     }
 }
-void BaseObject:: waitUntilKeyPress()
-{
-    SDL_Event event;
-    bool keyPressed = false;
 
-    while (!keyPressed) {
-        while (SDL_PollEvent(&event) != 0) {
-            if (event.type == SDL_QUIT) {
-                // Người dùng đóng cửa sổ
-                exit(0);
-            } else if (event.type == SDL_KEYDOWN) {
-                // Người dùng nhấn một phím
-                keyPressed = true;
-            }
-        }
-        SDL_Delay(10); // Tránh chiếm dụng quá nhiều CPU
-    }
-}
 void BaseObject::waitMouseButton()
 {
     SDL_Event event;
     bool mouseButton = false;
 
     while (!mouseButton) {
-        while (SDL_PollEvent(&event)) {
+        while (SDL_WaitEvent(&event)) {
             if (event.type == SDL_QUIT) {
                 mouseButton = true;
-            } else if (event.type == SDL_MOUSEBUTTONDOWN) {
+            } else if (event.type == SDL_MOUSEBUTTONUP) {
                 if (event.button.button == SDL_BUTTON_LEFT) {
-                    if(event.motion.x>458 && event.motion.x <680 && event.motion.y >246 && event.motion.y <394)
+                    if(event.motion.x>rect_.x && event.motion.x <rect_.x+rect_.w && event.motion.y >rect_.y && event.motion.y <rect_.y +rect_.h)
                     mouseButton = true;
                 }
             }
         }
-        SDL_Delay(10); // Tránh chiếm dụng quá nhiều CPU
     }
 }
