@@ -1,4 +1,4 @@
-#include"TextObject.h"
+#include"TEXT_OBJECT.h"
 
 TextObject::TextObject()
 {

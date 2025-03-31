@@ -185,9 +185,10 @@ int main(int argc, char *argv[])
                             bird->set_velocity_y(delta_y);
                             bird->LoadImg("image/red.png", g_screen);
                             Mix_PlayChannel(-1, sound1, 0);
-                            p_player.p_bird_list.push_back(bird);
                             p_player.number_bird -=1;
+                            p_player.p_bird_list.push_back(bird);
                             bird = NULL;
+                            break;
                         }
 
                 }
@@ -196,8 +197,9 @@ int main(int argc, char *argv[])
                     p_mouse.Render(g_screen);
                     p_mouse.DrawTrajectory(g_screen,x,y);
                     SDL_RenderPresent(g_screen);
-                    SDL_Delay(50);
+
                 }
+            SDL_Delay(30);
 
         }
         if(p_player.Result_game())
@@ -223,6 +225,7 @@ int main(int argc, char *argv[])
         Information.SetText(str_val);
         Information.LoadFromRenderText(font_game,g_screen);
         Information.RenderText(g_screen,0,0);
+
         SDL_RenderPresent(g_screen);
     }
     close();

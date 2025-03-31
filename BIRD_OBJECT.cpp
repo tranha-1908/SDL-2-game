@@ -8,7 +8,9 @@ BirdObject::BirdObject(){
     velocity_x = 50;
     velocity_y = 50;
     destroy_pig = false;
-    destroy_block = false;
+    destroy_block1= false;
+    destroy_block2= false;
+    destroy_block3= false;
     sound2 = Mix_LoadWAV("audio/destroy_pig.wav");
     Mix_VolumeChunk(sound2, MIX_MAX_VOLUME / 3);
 }
@@ -52,15 +54,15 @@ void BirdObject::CheckToMap(Map& map_data)
                         }
                         else if(map_data.tile[y][x] ==3){
                             map_data.tile[y][x] = 2;
-
+                            destroy_block3 = true;
                         }
                         else if(map_data.tile[y][x] ==2){
                             map_data.tile[y][x] = 1;
-
+                            destroy_block2 = true;
                         }
                         else if(map_data.tile[y][x] ==1){
                             map_data.tile[y][x] = 0;
-                            destroy_block = true;
+                            destroy_block1 = true;
                         }
 
 

@@ -18,7 +18,7 @@ public:
     std::vector<BirdObject*> p_bird_list;
 
     int score = 0;
-    int number_bird = 20;
+    int number_bird = 15;
     int number_pig = 7;
     bool Result;
 };

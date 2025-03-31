@@ -24,16 +24,21 @@ void MainObject:: HandleBird(SDL_Renderer* des, Map& map_data)
                 {
                     p_bird->HandleMove(map_data);
                     p_bird->Render(des);
-                    if(p_bird->get_is_move()==false){
-                        p_bird->explore(des);
+                    if(p_bird->destroy_block1){
+                        score += 100;
                     }
-                    if(p_bird->destroy_block){
-                        score += 1000;
+                    if(p_bird->destroy_block2){
+                        score += 200;
+                    }
+                    if(p_bird->destroy_block3){
+                        score += 500;
                     }
                     if(p_bird->destroy_pig){
                         score += 5000;
                         number_pig -=1;
-
+                    }
+                    if(p_bird->get_is_move()==false){
+                        p_bird->explore(des);
                     }
                 }
                 else {p_bird_list.erase(p_bird_list.begin()+i);
@@ -49,7 +54,7 @@ void MainObject:: HandleBird(SDL_Renderer* des, Map& map_data)
 void MainObject::reset()
 {
     score = 0;
-    number_bird = 20;
+    number_bird = 15;
     number_pig = 7;
     Result = false;
     p_bird_list.clear();
@@ -69,7 +74,7 @@ bool MainObject::Result_game()
 }
 void MainObject::DrawTrajectory(SDL_Renderer* renderer, int start_x, int start_y) {
 
-    const int num_points = 30 ;
+    const int num_points = 20 ;
     float time = 0;
     SDL_SetRenderDrawColor(renderer, 0   , 0  , 0  , 255 );
     for(int i = 0; i < num_points;i++){

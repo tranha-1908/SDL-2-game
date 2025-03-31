@@ -5,7 +5,7 @@
 
 
 
-#define step_time 0.01
+#define step_time 0.02
 class BirdObject:public BaseObject
 {
 public:
@@ -13,7 +13,7 @@ public:
     ~BirdObject();
 
     bool destroy_pig;
-    bool destroy_block;
+    bool destroy_block1,destroy_block2,destroy_block3;
     void set_velocity_x(const float& velocity_){ velocity_x = velocity_;}
     void set_velocity_y(const float& velocity_){ velocity_y = velocity_;}
     void set_time(const float& time_){time = time_;}

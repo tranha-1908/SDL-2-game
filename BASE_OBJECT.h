@@ -15,8 +15,6 @@ public:
     void Render(SDL_Renderer* des);
     void free();
 
-    void waitUntilKeyPress();
-
     void waitMouseButton();
 
 protected:
